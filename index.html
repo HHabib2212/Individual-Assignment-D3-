@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Indicators Correlation Heatmap - BRFSS 2024</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive Correlation Heatmap</h1>
+            <h2>Health Indicators - BRFSS 2024 Dataset</h2>
+            <p class="description">
+                This visualization shows the correlation between various health indicators including BMI, 
+                general health, smoking status, exercise, diabetes, and cardiovascular health metrics.
+                Hover over cells to see detailed correlation values.
+            </p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="colorScheme">Color Scheme:</label>
+                <select id="colorScheme">
+                    <option value="redblue" selected>Red-Blue</option>
+                    <option value="viridis">Viridis</option>
+                    <option value="coolwarm">Cool-Warm</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <button id="sortButton">Sort by Correlation Strength</button>
+            </div>
+        </div>
+
+        <div id="visualization">
+            <div id="tooltip" class="tooltip"></div>
+            <svg id="heatmap"></svg>
+        </div>
+
+        <div class="legend-container">
+            <h3>Variable Descriptions</h3>
+            <ul class="legend-list">
+                <li><strong>BMI:</strong> Body Mass Index</li>
+                <li><strong>General Health:</strong> Self-reported general health status</li>
+                <li><strong>Smoking Status:</strong> Whether smoked 100+ cigarettes lifetime</li>
+                <li><strong>Smoke Daily:</strong> Current smoking frequency</li>
+                <li><strong>Exercise:</strong> Any physical activity in past 30 days</li>
+                <li><strong>Diabetes:</strong> Diabetes diagnosis status</li>
+                <li><strong>Heart Attack:</strong> Ever had heart attack/myocardial infarction</li>
+                <li><strong>Heart Disease:</strong> Ever had coronary heart disease</li>
+                <li><strong>Stroke:</strong> Ever had a stroke</li>
+                <li><strong>High BP:</strong> High blood pressure indicator</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Data Source: BRFSS 2024 | Visualization by D3.js</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
